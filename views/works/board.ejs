@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Add Task</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+
+<body>
+<div class="card-body">
+    <% if (messages.error) { %>
+        <div class="alert alert-danger" role="alert"><%- messages.error %></div>
+    <% } %>
+
+    <ul>
+        <li><span style="text-decoration: underline;"><strong>내가 소유한 프로젝트</strong></span></li>
+        <td>
+            <a class="btn btn-success edit" href="/works/projectList/<%= employeeID %>">My Project List</a>
+        </td>
+    </ul>
+
+    <ul>
+        <li><span style="text-decoration: underline;"><strong>내가 수행하는 태스크</strong></span></li>
+        <td>
+            <a class="btn btn-success edit" href="/works/myTaskList/<%= employeeID %>">My Task List</a>
+        </td>
+    </ul>
+
+</div>
+</body>
+</html>
+

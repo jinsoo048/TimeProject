@@ -13,21 +13,23 @@
     <% if (messages.error) { %>
         <div class="alert alert-danger" role="alert"><%- messages.error %></div>
     <% } %>
-    <form action="/works/workList" method="post">
+    <form action="/works/taskList" method="post">
         <div class="card-body">
             <% if(data.length) { %>
                 <table class="table">
                     <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">workID</th>
-                        <th scope="col">employeeID</th>
-                        <th scope="col">workBegin</th>
-                        <th scope="col">workEnd</th>
-                        <th scope="col">workingTime</th>
-                        <th scope="col">workDetail</th>
-                        <th scope="col">projectID</th>
-                        <th scope="col">workTypeID</th>
+                        <th scope="col">Task ID</th>
+                        <th scope="col">Employee ID</th>
+                        <th scope="col">Employee Name</th>
+                        <th scope="col">Task Begin</th>
+                        <th scope="col">Task End</th>
+                        <th scope="col">Estimated Time</th>
+                        <th scope="col">Task Detail</th>
+                        <th scope="col">Project ID</th>
+                        <th scope="col">Task Type ID</th>
+                        <th scope="col">Task Type Name</th>
 
                     </tr>
                     </thead>
@@ -35,16 +37,18 @@
                     <% for(var i = 0; i< data.length; i++) { %>
                         <tr>
                             <th scope="row"><%= (i+1) %></th>
-                            <td><%= data[i].workID%></td>
+                            <td><%= data[i].taskID%></td>
                             <td><%= data[i].employeeID%></td>
-                            <td><%= data[i].workBegin%></td>
-                            <td><%= data[i].workEnd%></td>
-                            <td><%= data[i].workingTime%></td>
-                            <td><%= data[i].workDetail%></td>
+                            <td><%= data[i].employeeName%></td>
+                            <td><%= data[i].taskBegin%></td>
+                            <td><%= data[i].taskEnd%></td>
+                            <td><%= data[i].estimatedTime%></td>
+                            <td><%= data[i].taskDetail%></td>
                             <td><%= data[i].projectID%></td>
-                            <td><%= data[i].workTypeID%></td>
+                            <td><%= data[i].taskTypeID%></td>
+                            <td><%= data[i].taskTypeName%></td>
                             <td>
-                                <a class="btn btn-success edit" href="/works/edit/<%=data[i].workID%>">Edit</a>
+                                <a class="btn btn-success edit" href="/works/edit/<%=data[i].taskID%>">Edit</a>
                             </td>
                         </tr>
                     <% } %>
@@ -59,7 +63,7 @@
         </div>
         <div>
             <td>
-                <a class="btn btn-success edit" href="/works/add">Add a new work</a>
+                <a class="btn btn-success edit" href="/works/add">Add a new task</a>
             </td>
         </div>
     </form>

@@ -2,7 +2,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Works</title>
+    <title>Tasks</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
 <body class="container" style="margin-top: 50px;">
@@ -18,10 +18,10 @@
         <div class="card-header">
             <ul class="nav nav-pills w-100">
                 <li class="nav-pill active">
-                    <a class="nav-link">Works List</a>
+                    <a class="nav-link">Tasks List</a>
                 </li>
                 <li class="nav-pill ml-auto">
-                    <a class="nav-link active" href="/works/add">Add Work</a>
+                    <a class="nav-link active" href="/works/add">Add Task</a>
                 </li>
             </ul>
         </div>
@@ -31,14 +31,14 @@
             <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">workID</th>
+                    <th scope="col">taskID</th>
                     <th scope="col">employeeID</th>
-                    <th scope="col">workBegin</th>
-                    <th scope="col">workEnd</th>
-                    <th scope="col">workingTime</th>
-                    <th scope="col">workDetail</th>
+                    <th scope="col">taskBegin</th>
+                    <th scope="col">taskEnd</th>
+                    <th scope="col">taskTime</th>
+                    <th scope="col">taskDetail</th>
                     <th scope="col">projectID</th>
-                    <th scope="col">workTypeID</th>
+                    <th scope="col">taskTypeID</th>
                     <th width="200px">Action</th>
                 </tr>
             </thead>
@@ -46,17 +46,17 @@
             <% for(var i = 0; i< data.length; i++) { %>
                 <tr>
                     <th scope="row"><%= (i+1) %></th>
-                    <td><%= data[i].workID%></td>
+                    <td><%= data[i].taskID%></td>
                     <td><%= data[i].employeeID%></td>
-                    <td><%= data[i].workBegin%></td>
-                    <td><%= data[i].workEnd%></td>
-                    <td><%= data[i].workingTime%></td>
-                    <td><%= data[i].workDetail%></td>
+                    <td><%= data[i].taskBegin%></td>
+                    <td><%= data[i].taskEnd%></td>
+                    <td><%= data[i].taskTime%></td>
+                    <td><%= data[i].taskDetail%></td>
                     <td><%= data[i].projectID%></td>
-                    <td><%= data[i].workTypeID%></td>
+                    <td><%= data[i].taskTypeID%></td>
                     <td>
-                        <a class="btn btn-success edit" href="../works/edit/<%=data[i].workID%>">Edit</a>
-                        <a class="btn btn-danger delete" onclick="return alert('Are you sure want to delete this record?')" href="../works/delete/<%=data[i].workID%>">Delete</a>
+                        <a class="btn btn-success edit" href="../tasks/edit/<%=data[i].taskID%>">Edit</a>
+                        <a class="btn btn-danger delete" onclick="return alert('Are you sure want to delete this record?')" href="../tasks/delete/<%=data[i].taskID%>">Delete</a>
                     </td>
                 </tr>
             <% } %>
@@ -66,7 +66,7 @@
 
         <!-- if result is empty -->
         <% if(!data.length) { %>
-            <p class="text-center">No Works found!</p>
+            <p class="text-center">No Tasks found!</p>
         <% } %>
         </div>
     </div>
